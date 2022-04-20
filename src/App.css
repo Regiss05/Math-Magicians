@@ -1,3 +1,37 @@
 header {
   background-color: white;
 }
+
+.calculator {
+  width: 50%;
+  position: relative;
+  margin: 0 auto;
+  top: 25%;
+}
+
+.calculator__keypad-row {
+  display: flex;
+}
+
+.calculator__display-value {
+  padding: 16px;
+  font-size: 50px;
+  background-color: #444;
+  color: #eee;
+}
+
+.calculator__keypad-key {
+  flex: 1;
+  padding: 16px;
+  font-size: 18px;
+  color: #444;
+  outline: none;
+  cursor: pointer;
+  background-color: #eee;
+  border: 1px solid rgb(219, 216, 216);
+  text-align: center;
+}
+
+.sign {
+  background-color: #ffb20d;
+}
