@@ -120,7 +120,6 @@ export default function calculate(obj, buttonName) {
     return { operation: buttonName };
   }
 
-  // save the operation and shift 'next' into 'total'
   return {
     total: obj.next,
     next: null,
