@@ -1,48 +1,44 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import Calculate from '../logic/Calculate';
+import Button from './Button';
+import Display from './Display';
 
-export class Calculator extends PureComponent {
-  render() {
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    this.onBtnPressed = this.onBtnPressed.bind(this);
+
+    this.setState({
+      total: null,
+      next: null,
+      operation: null,
+    });
+  }
+
+  onBtnPressed = (btnName) => {
+    const result = Calculate(this.state, btnName);
+    this.setState(result);
+  };
+
+  render = () => {
+    const { total, next, operation } = this.state;
+    let buffer = `${total}${operation}${next}`.replace(/null/g, '');
+    buffer = buffer.replace(/undefined/g, '');
+    const window = buffer;
+
     return (
-      <>
-        <div className="calculator">
-          <div className="calculator__display">
-            <div className="calculator__display-value">0</div>
-          </div>
-          <div className="calculator__keypad">
-            <div className="calculator__keypad-row">
-              <div className="calculator__keypad-key">AC</div>
-              <div className="calculator__keypad-key">+/-</div>
-              <div className="calculator__keypad-key">%</div>
-              <div className="calculator__keypad-key sign">:</div>
-            </div>
-            <div className="calculator__keypad-row">
-              <div className="calculator__keypad-key">7</div>
-              <div className="calculator__keypad-key">8</div>
-              <div className="calculator__keypad-key">9</div>
-              <div className="calculator__keypad-key sign">x</div>
-            </div>
-            <div className="calculator__keypad-row">
-              <div className="calculator__keypad-key">4</div>
-              <div className="calculator__keypad-key">5</div>
-              <div className="calculator__keypad-key">6</div>
-              <div className="calculator__keypad-key sign">-</div>
-            </div>
-            <div className="calculator__keypad-row">
-              <div className="calculator__keypad-key">1</div>
-              <div className="calculator__keypad-key">2</div>
-              <div className="calculator__keypad-key">3</div>
-              <div className="calculator__keypad-key sign">+</div>
-            </div>
-            <div className="calculator__keypad-row">
-              <div className="calculator__keypad-key">0</div>
-              <div className="calculator__keypad-key">.</div>
-              <div className="calculator__keypad-key">=</div>
-              <div className="calculator__keypad-key sign">=</div>
-            </div>
-          </div>
-        </div>
-
-      </>
+      <div className="main">
+        <Display display={window === '' ? undefined : window} />
+        <Button ctrls={['AC', '+/-', '%', '÷']} setBtn={this.onBtnPressed} last={false} />
+        <Button ctrls={['7', '8', '9', 'x']} setBtn={this.onBtnPressed} last={false} />
+        <Button ctrls={['4', '5', '6', '-']} setBtn={this.onBtnPressed} last={false} />
+        <Button ctrls={['1', '2', '3', '+']} setBtn={this.onBtnPressed} last={false} />
+        <Button ctrls={['0', '.', '=']} setBtn={this.onBtnPressed} last />
+      </div>
     );
   }
 }
