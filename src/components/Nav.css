@@ -6,15 +6,20 @@
   justify-content: space-between;
 }
 
+.calculator {
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+
 ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
 }
 
 ul li {
   list-style: none;
+  padding: 0 10px;
 }
 
 a {

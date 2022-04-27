@@ -12,7 +12,7 @@ class Nav extends React.PureComponent {
         <div className="menu-container">
           <ul className="menu">
             <li><Link to="/" className="menu-option-style">Home</Link></li>
-            <li><Link to="/calculator" className="menu-option-style">Calculator</Link></li>
+            <li className="calculator"><Link to="/calculator" className="menu-option-style">Calculator</Link></li>
             <li><Link to="/quotes" className="menu-option-style">Quotes</Link></li>
           </ul>
         </div>
