@@ -1,0 +1,21 @@
+.menu-container {
+  background-color: rgb(123, 29, 29);
+}
+
+ul {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
