@@ -2,6 +2,12 @@
   background-color: rgb(123, 29, 29);
 }
 
+h3 {
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 ul {
   display: flex;
   padding: 20px;

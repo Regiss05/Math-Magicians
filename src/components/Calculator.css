@@ -52,8 +52,9 @@
 }
 
 .bg-orange {
-  background-color: #ff8c00;
+  background-color: rgb(221, 86, 86);
   border: none;
+  color: white;
 }
 
 .display-txt {
