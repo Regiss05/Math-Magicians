@@ -1,16 +1,13 @@
-.menu-container {
+.nav-area {
   background-color: rgb(123, 29, 29);
-}
-
-h3 {
-  color: black;
-  text-align: center;
-  text-transform: uppercase;
+  padding: 0 20px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 ul {
   display: flex;
-  padding: 20px;
   justify-content: center;
   align-items: center;
   gap: 40px;
