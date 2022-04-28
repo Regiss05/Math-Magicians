@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Perform Operation & Display Results (Calculator Component) | Test [2] & [0] button 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -9,11 +9,11 @@
+          class=\\"display\\"
+        >
+          <h1
+            class=\\"pixel font display-txt\\"
+          >
+-           0
++           20
+          </h1>
+        </div>
+        <div
+          class=\\"ctrls\\"
+        >"
+`;
+
+exports[`Perform Operation & Display Results (Calculator Component) | Test [8] & [AC] button 1`] = `
+"Snapshot Diff:
+Compared values have no visual difference."
+`;
+
+exports[`Perform Operation & Display Results (Calculator Component) | Test [AC] button 1`] = `
+"Snapshot Diff:
+Compared values have no visual difference."
+`;
