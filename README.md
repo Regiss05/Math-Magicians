@@ -4,6 +4,10 @@
 
 > Magician app is React component that will hold the core functionality: a calculator.
 
+## Live demo
+- [Netlify](https://regiss-math-magician.netlify.app)
+- [Heroku]()
+- [Gh-Pages]()
 
 ## Built With
 
