@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 
 expect.extend({ toMatchDiffSnapshot });
 
-test('Perform Operation & Display Results (Calculator Component) | Test [AC] button', () => {
+it('Perform Operation & Display Results (Calculator Component) | Test [AC] button', () => {
   // notes for me -> do this when you are not using the screen object from testing library
   const { getByText, asFragment } = render(<Calculator />);
   const firstRender = asFragment();
@@ -13,7 +13,7 @@ test('Perform Operation & Display Results (Calculator Component) | Test [AC] but
   expect(firstRender).toMatchDiffSnapshot(asFragment());
 });
 
-test('Perform Operation & Display Results (Calculator Component) | Test [8] & [AC] button', () => {
+it('Perform Operation & Display Results (Calculator Component) | Test [8] & [AC] button', () => {
   const { getByText, asFragment } = render(<Calculator />);
   const firstRender = asFragment();
   fireEvent.click(getByText(/8/));
@@ -23,7 +23,7 @@ test('Perform Operation & Display Results (Calculator Component) | Test [8] & [A
   expect(firstRender).toMatchDiffSnapshot(asFragment());
 });
 
-test('Perform Operation & Display Results (Calculator Component) | Test [2] & [0] button', () => {
+it('Perform Operation & Display Results (Calculator Component) | Test [2] & [0] button', () => {
   const { asFragment } = render(<Calculator />);
   const firstRender = asFragment();
   // used a screen here so no need to perform destruction of getByText from render()
@@ -34,7 +34,7 @@ test('Perform Operation & Display Results (Calculator Component) | Test [2] & [0
   expect(firstRender).toMatchDiffSnapshot(asFragment());
 });
 
-test('Perform Operation & Display Results (Calculator Component) | Test Operation Negation [ 70 - 30 ] = [40]', () => {
+it('Perform Operation & Display Results (Calculator Component) | Test Operation Negation [ 70 - 30 ] = [40]', () => {
   render(<Calculator />);
   fireEvent.click(screen.getAllByText(/7/i)[0]);
   fireEvent.click(screen.getAllByText(/0/i)[0]);
@@ -47,7 +47,7 @@ test('Perform Operation & Display Results (Calculator Component) | Test Operatio
   expect(element).toBeInTheDocument();
 });
 
-test('Perform Operation & Display Results (Calculator Component) | Test Operation Multiplication [ 10 x 30 ] = [300]', () => {
+it('Perform Operation & Display Results (Calculator Component) | Test Operation Multiplication [ 10 x 30 ] = [300]', () => {
   render(<Calculator />);
   fireEvent.click(screen.getAllByText(/1/i)[0]);
   fireEvent.click(screen.getAllByText(/0/i)[0]);
@@ -60,7 +60,7 @@ test('Perform Operation & Display Results (Calculator Component) | Test Operatio
   expect(element).toBeInTheDocument();
 });
 
-test('Perform Operation & Display Results (Calculator Component) | Test Operation Division [ 100 ÷ 20 ] = [5]', () => {
+it('Perform Operation & Display Results (Calculator Component) | Test Operation Division [ 100 ÷ 20 ] = [5]', () => {
   render(<Calculator />);
   fireEvent.click(screen.getAllByText(/1/i)[0]);
   fireEvent.click(screen.getAllByText(/0/i)[0]);
